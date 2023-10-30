@@ -43,7 +43,7 @@ module.exports.postProduct = async(req,res)=>{
    try {
         
     //    const value = JSON.parse(req.body)
-       console.log(req.body);
+        console.log(req.body);
        const result = await postProductService(req.body,req.files)
        console.log(result);
        await result.save({validateBeforeSave:true});
@@ -57,19 +57,7 @@ module.exports.postProduct = async(req,res)=>{
     })
    }
 }
-module.exports.likeUpdateProduct = async(req,res)=>{
-   try {
-       const {id} = req.params;
-   
-       const result = await likeUpdateProductService(req.body.userId,id)
-       console.log(result);
-       res.json({
-           result 
-       })
-   } catch (error) {
-      
-   }
-}
+ 
 module.exports.getOneProduct = async(req,res)=>{
    try {
        const {id} = req.params;
@@ -82,49 +70,8 @@ module.exports.getOneProduct = async(req,res)=>{
        
    }
 }
-module.exports.updateProduct = async(req,res)=>{
-   try {
-       const {id} = req.params;
-       console.log(id);
-       const result = await updateProductService(id,req.body)
-       res.json({
-           result   
-           
-       })
-   } catch (error) {
-       
-   }
-}
+ 
 
-
-module.exports.deleteProduct = async(req,res)=>{
-   try {
-       const {id} = req.params;
-       const result = await deleteProductService(id)
-       res.json({
-           result   
-           
-       })
-   } catch (error) {
-       
-   }
-}
-module.exports.deleteBulkProduct = async(req,res)=>{
-   try {
-       // const {id} = req.params;
-       // 
-       console.log(req.body );
-    
-const idsArray = req.body.map(item => item?._id);
-
-const result = await deleteBulkProductService(idsArray)
-       res.json({
-           // result   
-           
-       })
-   } catch (error) {
-       
-   }
-}
+ 
 
 

@@ -38,36 +38,12 @@ const { signupService, findUserByEmail, findUserByToken, userSubscribeService } 
      try {
         console.log(req.body);
        const { email, password } = req.body;
-    
-       if (!email || !password) {
-         return res.status(401).json({ 
-           status: "fail",
-           error: "Please provide your credentials",
-         });
-       }
+     
    
        const user = await findUserByEmail(email);
+      console.log(user);
    
-       if (!user) {
-         return res.status(401).json({
-           status: "fail",
-           error: "No user found. Please create an account",
-         });
-       }
-       const isPasswordValid = user.comparePassword(password, user.password);
-       if (!isPasswordValid) {
-         
-         return res.status(401).json({
-           status: "fail",
-           error: "Password is not correct",
-         });
-       }
-       if (user.status != "active") {
-         return res.status(401).json({
-           status: "fail",
-           error: "Your account is not active yet.",
-         });
-       }
+      
        const token = generateToken(user);
        const { password: pwd, ...others } = user.toObject();
        res.status(200).json({
