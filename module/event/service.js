@@ -57,12 +57,12 @@ module.exports.postProductService = async (data,imgPath)=>{
 //   const result = await Product.updateOne({_id:id},{$set:values})
 //   return result
 // }
-// module.exports.deleteProductService = async (id)=>{
+module.exports.deleteProductService = async (id)=>{
   
-//   const result = await Product.deleteOne({_id:id})
-  
-//  return result
-// }
+  const result = await Event.deleteOne({_id:id})
+    console.log(result);
+ return result
+}
 // module.exports.deleteBulkProductService = async (ids)=>{
   
 //   const result = await Product.deleteMany({_id:ids})

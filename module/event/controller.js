@@ -82,24 +82,12 @@ module.exports.getOneProduct = async(req,res)=>{
        
    }
 }
-module.exports.updateProduct = async(req,res)=>{
-   try {
-       const {id} = req.params;
-       console.log(id);
-       const result = await updateProductService(id,req.body)
-       res.json({
-           result   
-           
-       })
-   } catch (error) {
-       
-   }
-}
-
+ 
 
 module.exports.deleteProduct = async(req,res)=>{
    try {
        const {id} = req.params;
+       console.log(id);
        const result = await deleteProductService(id)
        res.json({
            result   

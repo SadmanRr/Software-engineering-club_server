@@ -57,12 +57,12 @@ module.exports.getOneProductService = async (id)=>{
 //   const result = await Product.updateOne({_id:id},{$set:values})
 //   return result
 // }
-// module.exports.deleteProductService = async (id)=>{
+module.exports.deleteProductService = async (id)=>{
   
-//   const result = await Product.deleteOne({_id:id})
+  const result = await Wing.deleteOne({_id:id})
   
-//  return result
-// }
+ return result
+}
 // module.exports.deleteBulkProductService = async (ids)=>{
   
 //   const result = await Product.deleteMany({_id:ids})

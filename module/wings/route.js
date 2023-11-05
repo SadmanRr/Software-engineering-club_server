@@ -9,6 +9,7 @@ router
     .post("/wing", upload.array("productImg"),  productController.postProduct)
     .get("/wing", productController.getProduct)
     .get("/wing/:id",productController.getOneProduct)
+    .delete("/wing/:id",productController.getDeleteProduct)
     // .patch("/product/like-update/:id",verifyToken, authorization('admin'), productController.likeUpdateProduct)
     // .get("/product/:id", productController.getOneProduct)
     // .delete("/product/all/delete",verifyToken, authorization('admin'), productController.deleteBulkProduct)

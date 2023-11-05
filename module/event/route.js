@@ -7,6 +7,7 @@ const upload = require("../../middleware/upload");
 router
     .post("/event", upload.array("productImg"),productController.postProduct)
     .get("/event", productController.getProduct)
+    .delete("/event/:id", productController.deleteProduct)
     // .patch("/product/like-update/:id",verifyToken, authorization('admin'), productController.likeUpdateProduct)
     // .get("/product/:id", productController.getOneProduct)
     // .delete("/product/all/delete",verifyToken, authorization('admin'), productController.deleteBulkProduct)
